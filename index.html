@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <title>준렬 ♥ 재은 결혼합니다</title>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="박준렬 ♥ 신재은 결혼합니다">
 <meta property="og:description" content="2026년 7월 4일 토요일 오후 12시 10분 | 더파티움 여의도 파티움홀(2F)">
-<meta property="og:image" content="image/main-v2.jpeg">
+<meta property="og:image" content="image/main-v3.jpeg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="박준렬 ♥ 신재은 결혼합니다">
 <meta name="twitter:description" content="2026년 7월 4일 토요일 오후 12시 10분 | 더파티움 여의도 파티움홀(2F)">
-<meta name="twitter:image" content="image/main-v2.jpeg">
+<meta name="twitter:image" content="image/main-v3.jpeg">
 
-<link rel="preload" as="image" href="image/main-v2.jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="image/main-v3.jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
@@ -516,6 +517,21 @@ section {
   background: rgba(184,150,11,0.04);
 }
 
+.map-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--sans);
+  letter-spacing: -0.5px;
+}
+.map-icon.naver { background: #03C75A; color: #fff; }
+.map-icon.kakao { background: #FEE500; color: #3C1E1E; }
+
 .transport-info {
   text-align: left;
   font-size: 13px;
@@ -547,6 +563,61 @@ section {
   background: var(--gold);
   border-radius: 50%;
 }
+
+.bus-stops {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+.bus-stop {
+  padding: 10px 12px;
+  background: var(--warm-beige);
+  border-radius: 8px;
+}
+.bus-stop-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+.bus-stop-no {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 4px;
+  font-weight: 400;
+}
+.bus-stop-routes {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+.bus-route {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.bus-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 0 5px;
+  border-radius: 3px;
+  letter-spacing: 0.2px;
+  background: transparent;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+}
+.bus-tag.normal { color: #4A90D9; }
+.bus-tag.trunk  { color: #3A7BD5; }
+.bus-tag.branch { color: #5BAE5B; }
+.bus-tag.village{ color: #6FB76F; }
+.bus-tag.line5  { color: #996CAC; }
+.bus-tag.line9  { color: #B6995A; }
 
 /* ===== Account Section ===== */
 .account {
@@ -764,7 +835,7 @@ section {
 
 <!-- Hero -->
 <section class="hero">
-  <img class="hero-image" src="image/main-v2.jpeg" alt="커플 사진" fetchpriority="high" decoding="async">
+  <img class="hero-image" src="image/main-v3.jpeg" alt="커플 사진" fetchpriority="high" decoding="async">
   <div class="hero-overlay">
     <p class="hero-label">Wedding Invitation</p>
     <h1 class="hero-title">결혼합니다</h1>
@@ -915,9 +986,11 @@ section {
 
     <div class="map-buttons">
       <a class="map-btn" href="https://map.naver.com/v5/search/더파티움 여의도" target="_blank" rel="noopener">
+        <span class="map-icon naver">N</span>
         네이버맵
       </a>
       <a class="map-btn" href="https://map.kakao.com/?q=더파티움 여의도" target="_blank" rel="noopener">
+        <span class="map-icon kakao">K</span>
         카카오맵
       </a>
     </div>
@@ -925,16 +998,66 @@ section {
     <dl class="transport-info">
       <dt>지하철</dt>
       <dd>
-        9호선 국회의사당역 3번 출구 도보 5분<br>
-        5호선 여의나루역 1번 출구 무료 셔틀버스 이용<br>
-        (또는 2번 출구 정류장에서 마을버스 영등포10번 승차 후 기계회관 하차)
+        <div class="bus-stops">
+          <div class="bus-stop">
+            <div class="bus-stop-name">
+              <span class="bus-tag line9">9호선</span> 국회의사당역
+            </div>
+            <div class="bus-stop-routes">
+              3번 출구 도보 5분
+            </div>
+          </div>
+          <div class="bus-stop">
+            <div class="bus-stop-name">
+              <span class="bus-tag line5">5호선</span> 여의나루역
+            </div>
+            <div class="bus-stop-routes">
+              1번 출구 무료 셔틀버스 이용<br>
+              또는 2번 출구 정류장에서 마을버스 영등포10번 승차 후 기계회관 하차
+            </div>
+          </div>
+        </div>
       </dd>
 
       <dt>버스</dt>
       <dd>
-        기계회관 정류장 하차 — 일반 10번, 마을 영등포10번<br>
-        산업은행본점 정류장 하차 — 간선 463번, 일반 10번<br>
-        여의도순복음교회 정류장 하차 — 간선 463번, 지선 5633번
+        <div class="bus-stops">
+          <div class="bus-stop">
+            <div class="bus-stop-name">기계회관</div>
+            <div class="bus-stop-routes">
+              <span class="bus-route"><span class="bus-tag normal">일반</span>10</span>
+              <span class="bus-route"><span class="bus-tag village">마을</span>영등포10</span>
+            </div>
+          </div>
+          <div class="bus-stop">
+            <div class="bus-stop-name">산업은행본점</div>
+            <div class="bus-stop-routes">
+              <span class="bus-route"><span class="bus-tag normal">일반</span>10</span>
+              <span class="bus-route"><span class="bus-tag trunk">간선</span>463</span>
+              <span class="bus-route"><span class="bus-tag village">마을</span>영등포10</span>
+            </div>
+          </div>
+          <div class="bus-stop">
+            <div class="bus-stop-name">여의도순복음교회</div>
+            <div class="bus-stop-routes">
+              <span class="bus-route"><span class="bus-tag normal">일반</span>10</span>
+              <span class="bus-route"><span class="bus-tag trunk">간선</span>463</span>
+              <span class="bus-route"><span class="bus-tag branch">지선</span>5633</span>
+              <span class="bus-route"><span class="bus-tag village">마을</span>영등포10</span>
+            </div>
+          </div>
+          <div class="bus-stop">
+            <div class="bus-stop-name">여의도 환승센터</div>
+            <div class="bus-stop-routes">
+              <span class="bus-route"><span class="bus-tag normal">일반</span>88</span>
+              <span class="bus-route"><span class="bus-tag trunk">간선</span>8600, 8601</span>
+            </div>
+            <div class="bus-stop-routes">
+              <span class="bus-route"><span class="bus-tag trunk">간선</span>N16, 160, 260, 360, 600, 662</span>
+              <span class="bus-route"><span class="bus-tag branch">지선</span>5012, 6623, 6628</span>
+            </div>
+          </div>
+        </div>
       </dd>
 
       <dt>자가용</dt>
@@ -944,7 +1067,7 @@ section {
       </dd>
 
       <dt>주차</dt>
-      <dd>중소기업중앙회 본관 지하주차장 이용 (무료)</dd>
+      <dd>중소기업중앙회 본관 지하주차장 이용 (90분 무료)</dd>
     </dl>
   </div>
 </section>
